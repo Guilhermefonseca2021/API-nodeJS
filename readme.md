@@ -1,4 +1,4 @@
-<h3> node init <h3>
+<h3> node init </h3>
 
 - npm init
 - npm install express
@@ -6,12 +6,12 @@
 - npm add nodemon            (watch server)
 
 
-<h3> libs <h3>
+<h3> libs </h3>
 
 - router 
 - node express
 
-<h3> estra <h3>
+<h3> estra </h3>
 
 .gitignore
 pasta/
