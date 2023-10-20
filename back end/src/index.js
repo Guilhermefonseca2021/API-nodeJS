@@ -13,7 +13,11 @@ app.use(routes)
 
 
 // database
+const connectDatabase = require('./database/connect')
 
+connectDatabase()
+    .then(() => { console.log('Conectado ao banco de dados') })
+    .catch((error) => console.log(`Houve um erro ${error}`))
 
 
 // server

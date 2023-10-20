@@ -1,12 +1,8 @@
 const mongoose = require('mongoose')
 const config = require('../config/database')
-// require('dotenv')
-
 
 async function connectDataBase() {
-    await mongoose.connect(
-        config.default.url
-    )
+    await mongoose.connect(`${config.url}`)
 }
 
 module.exports = connectDataBase
