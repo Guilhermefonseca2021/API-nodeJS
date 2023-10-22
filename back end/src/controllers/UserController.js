@@ -56,27 +56,35 @@ async function CreateUser(request, response) {
 
 async function UpdateUser(request, response) {
     const { id } = request.params;
+    const { email, password } = request.body;
 
     try {
-        const user = await User.findById(id)
+        const updatePerson = await User.findByIdAndUpdate({_id: id}, person)
+
+        if(!updatePerson) {
+            return response.status(404).json();
+        }
+
+        return response.status(200).json(updatePerson);
+    } catch(error) {
+        return response.status(500).json({ error: 'Error server error.'})
+    }
+}
+
+async function Destroy(request, response) {
+    const { id } = request.params;
+
+    try {
+        const user = await User.findByIdAndDelete(id);
 
         if(!user) {
             return response.status(404).json();
         }
 
-        const hashPassword = await bcrypt.hash(password, 10)
-        
-        await user.updateOne({ email, password: hashPassword });
-
-        return response.status(200).json();
+        return response.status(200).json(user);
     } catch(error) {
-        return 
+        return response.status(500).json({ error: 'Error server error.'})
     }
-
-}
-
-async function Destroy(request, response) {
-
 }
 
 module.exports = { UsersControllers, Show, CreateUser, Destroy, UpdateUser}

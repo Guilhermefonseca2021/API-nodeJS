@@ -8,28 +8,27 @@
 
 ## Skills checked
 
--[X] Logica de programacao
--[x] Javascript / Typescript
--[ ] Backend Node.js
-    - Banco de dados
-      - Relacionais: **Postgres** / MySQL
-      - Nao relacionais: MongoDB
-    - CRUD
-    - Login / JWT
--[x] Frontend React
-    - [ ] Criar uma aplicacao
-      - [x]  CLI
-    - [ ] Componentes
-    - [ ] Hooks
-    - [ ] Rotas
-    - [ ] Context
-
+* [X] Logica de programacao
+* [x] Javascript / Typescript
+* [ ] Backend Node.js
+    * [ ] Banco de dados
+      * Relacionais: **Postgres** / MySQL
+      * Nao relacionais: MongoDB
+    * CRUD
+    * Login / JWT
+* [x] Frontend React
+    * [ ] Criar uma aplicacao
+      *  [x]  CLI
+    * [ ] Componentes
+    * [ ] Hooks
+    * [ ] Rotas
+    * [ ] Context
 
 
 ## 🛠️ Tecnologias 
+
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://pt-br.react.org/)
-- [Styled-Components](https://styled-components.com/)
 - [Node.js](https://nodejs.org/en/)
 - [MongoDB](https://www.mongodb.com/pt-br)
 
@@ -37,7 +36,7 @@
 
 antes de comecar voce precisa ter instalado as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
-Alem disso é om ter um editor de codigo para trabalhar com o codigo como [VSCode](https://code.visualstudio.com/)
+Alem disso um ter um editor de codigo para trabalhar com o codigo como [VSCode](https://code.visualstudio.com/)
 
 
 ##  Rodando Front-end
