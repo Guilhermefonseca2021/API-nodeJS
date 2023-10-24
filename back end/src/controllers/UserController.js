@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt')
+const { RepositoriesController } = require('./RepositoriesControllers')
 
 
 async function UsersControllers(request, response) {
@@ -57,15 +58,16 @@ async function CreateUser(request, response) {
 async function UpdateUser(request, response) {
     const { id } = request.params;
     const { email, password } = request.body;
+    const person = { email, password };
 
     try {
-        const updatePerson = await User.findByIdAndUpdate({_id: id}, person)
+        const updatePerson = await User.findOneAndUpdate({_id: id}, person)
 
-        if(!updatePerson) {
-            return response.status(404).json();
+        if(updatePerson.matchedCount = 0) {
+            return response.status(422).json({ message: 'O usuario nao foi encontrado'});
         }
 
-        return response.status(200).json(updatePerson);
+        return response.status(200).json(person);
     } catch(error) {
         return response.status(500).json({ error: 'Error server error.'})
     }

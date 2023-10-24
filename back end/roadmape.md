@@ -9,13 +9,14 @@
 
 ## Seguranca de dados do usuario
 
-- [x] Hash Criptografia de senha
-- [ ] Autenticacao de login
-  - [x] Rotas privadas
-  - [x] Criptografia inreversivel
-- [ ] 
+* [x] Hash Criptografia de senha
+* [ ] Autenticacao de login
+  * [x] Rotas privadas
+  * [x] Criptografia inreversivel
+* [ ] middlewares
+  * [ ] Client <--> Nodejs -> Express -> Middlewares -> Controller
+  * [ ] 
  
-
 
 
 ## Requisitos

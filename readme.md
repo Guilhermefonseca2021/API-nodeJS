@@ -14,8 +14,8 @@
     * [ ] Banco de dados
       * Relacionais: **Postgres** / MySQL
       * Nao relacionais: MongoDB
-    * CRUD
-    * Login / JWT
+    * [x] CRUD
+    * [ ] Login / JWT
 * [x] Frontend React
     * [ ] Criar uma aplicacao
       *  [x]  CLI
