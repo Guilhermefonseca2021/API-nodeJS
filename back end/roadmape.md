@@ -13,7 +13,7 @@
 * [ ] Autenticacao de login
   * [x] Rotas privadas
   * [x] Criptografia inreversivel
-* [ ] middlewares
+* [ ] Middlewares
   * [ ] Client <--> Nodejs -> Express -> Middlewares -> Controller
   * [ ] 
  

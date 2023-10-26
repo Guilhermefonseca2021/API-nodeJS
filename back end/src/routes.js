@@ -1,5 +1,4 @@
 const routes = require('express').Router();
-const HelloController = require('./controllers/HelloControllers')
 
 const auth = require('./middlewares/auth')
 const { UsersControllers, CreateUser, Show, UpdateUser, Destroy } = require('./controllers/UserController')
@@ -8,11 +7,10 @@ const CreateSession = require('./controllers/SessionController');
 
 
 // public routes
-routes.get('/hello', HelloController)
 routes.get('', () => {})
 
 routes.use(auth)
-// routes.put('/sessions', CreateSession)
+routes.post('/sessions', CreateSession)
 
 // private routes
 routes.get('/users', UsersControllers)
