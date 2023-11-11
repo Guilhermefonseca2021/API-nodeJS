@@ -9,7 +9,7 @@ const CreateSession = require('./controllers/SessionController');
 // public routes
 routes.get('', () => {})
 
-routes.use(auth)
+// routes.use(auth)
 routes.post('/sessions', CreateSession)
 
 // private routes
