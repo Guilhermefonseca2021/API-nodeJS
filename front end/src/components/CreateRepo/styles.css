@@ -1,4 +1,4 @@
-#main .search {
+#main .new {
     display: flex;
     color: #d5d5d5;
     justify-content: space-evenly;
@@ -11,8 +11,3 @@
 
     gap: .5rem;
 }
-
-#main label {
-    flex-shrink: 0;
-}
-

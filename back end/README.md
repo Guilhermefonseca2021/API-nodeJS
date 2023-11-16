@@ -6,17 +6,14 @@
 
 ## Node <---> MongoDB
 
-
 ## Seguranca de dados do usuario
 
 * [x] Hash Criptografia de senha
-* [ ] Autenticacao de login
+* [x] Autenticacao de login
   * [x] Rotas privadas
   * [x] Criptografia inreversivel
-* [ ] Middlewares
-  * [ ] Client <--> Nodejs -> Express -> Middlewares -> Controller
-  * [ ] 
- 
+* [x] Middlewares
+  * [x] Client <--> Nodejs -> Express -> Middlewares -> Controller
 
 
 ## Requisitos
@@ -27,7 +24,9 @@ ter o node na sua maquina [NodeJs](https://nodejs.org/en), alem disso a escolha 
 
 ```js
 // Instalado o node na sua maquina, entre na pasta
-$  cd back end
+$  cd back end 
+
+// Tenha uma variavel ambiente conectada ao MongoDB no arquivo .env
 
 // Instale as dependencias de arquivos
 $  npm install
@@ -35,6 +34,5 @@ $  npm install
 // Rode o servidor no terminal
 $  npm run dev
 
-// Pode fazer voltar para o front end
+// Pode voltar para o front end
 ```
-

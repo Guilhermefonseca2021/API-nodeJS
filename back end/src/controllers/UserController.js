@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const { RepositoriesController } = require("./RepositoriesControllers");
+// const { RepositoriesController } = require("./RepositoriesControllers");
 
 async function UsersControllers(request, response) {
   try {
@@ -40,7 +40,7 @@ async function CreateUser(request, response) {
         .status(422)
         .json({ message: `User ${email} already exists` });
     }
-
+    
     const hashPassword = await bcrypt.hash(password, 10);
 
     const newUser = await User.create({

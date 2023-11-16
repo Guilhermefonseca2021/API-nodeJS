@@ -1,0 +1,25 @@
+#main .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: center;
+    border-color: #f1f1f1;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+
+#main .navbar .logo {
+    color: #010101;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#main .navbar button {
+    padding: .5rem;
+    color: #d5d5d5;
+    background-color: gray;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+}

@@ -7,14 +7,13 @@ const CreateSession = require('./controllers/SessionController');
 
 
 // public routes
-routes.get('', () => {})
-
-// routes.use(auth)
 routes.post('/sessions', CreateSession)
+routes.post('/users', CreateUser)
+
+routes.use(auth)
 
 // private routes
 routes.get('/users', UsersControllers)
-routes.post('/users', CreateUser)
 routes.get('/users/:id', Show)
 routes.put('/users/:id', UpdateUser)
 routes.delete('/users/:id', Destroy)

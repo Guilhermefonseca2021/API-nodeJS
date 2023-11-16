@@ -10,13 +10,13 @@ async function CreateSession(request, response) {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return response.status(404).json({ error: "User or password invalid" });
+      return response.status(401).json({ error: "User or password invalid" });
     }
 
     const checkPassword = await bcrypt.compare(password, user.password);
-
+    
     if (!checkPassword) {
-      return response.status(422).json({ msg: "Email ou senha invalidos!" });
+      return response.status(401).json({ msg: "Email ou senha invalidos!" });
     }
 
     const { id } = user;
