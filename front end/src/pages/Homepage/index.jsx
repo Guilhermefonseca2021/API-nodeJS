@@ -1,39 +1,56 @@
-import { useState } from "react";
-import Header from "../../components/Header/Header";
+import { useEffect, useState } from "react";
+import Header from "../../components/Header/index";
 import "./style.css";
 import Repository from "../../components/Repository";
 import CreateRepo from "../../components/CreateRepo";
+import axios from "axios";
+
+export const userId = "6532ec44d633ce07376c9368";
 
 export default function Homepage() {
   const [search, setSearch] = useState("");
+  const [repos, setRepos] = useState([]);
 
   function handleSearch(event) {
-    console.log(event.target.value);
-    setSearch('')
+    event.preventDefault();
+    console.log(search)
   }
+  
+  useEffect(() => {
+    axios(`http://localhost:3333/users/${userId}/repositories`)
+    .then(response => setRepos(response.data))
+  }, [])
 
   return (
     <div id="main">
       <Header />
-      <div className="search">
-        <label htmlFor="query">All repos:</label>
+      <form onSubmit={handleSearch} className="search">
+        <label htmlFor="search">All repos:</label>
         <div>
           <input
             type="search"
             name="query"
-            id="query"
             placeholder="search"
-            value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button onClick={() => handleSearch(search)}>Procurar</button>
+          <button type="submit">Procurar</button>
         </div>
-      </div>
+      </form>
 
       <div className="repositories">
-        <Repository />
         <CreateRepo />
+        {repos.map(repo => {
+          return(
+            <Repository 
+              key={repo.id} 
+              name={repo.name}
+              url={repo.url}
+            />
+          )
+        })
+        }
       </div>
     </div>
   );
 }
+

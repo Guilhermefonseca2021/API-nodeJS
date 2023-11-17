@@ -71,7 +71,7 @@ async function DestroyRepository(request, response) {
       userId: user_id,
       id,
     });
-
+    
     if (!repository) {
       return response.status(404).json();
     }

@@ -10,20 +10,19 @@
 
 * [X] Logica de programacao
 * [x] Javascript / Typescript
-* [ ] Backend Node.js
-    * [ ] Banco de dados
+* [x] Backend Node.js
+    * [x] Banco de dados
       * Relacionais: **Postgres** / MySQL
       * Nao relacionais: MongoDB
     * [x] CRUD
-    * [ ] Login / JWT
+    * [x] Login / JWT
 * [x] Frontend React
-    * [ ] Criar uma aplicacao
+    * [x] Criar uma aplicacao
       *  [x]  CLI
-    * [ ] Componentes
-    * [ ] Hooks
-    * [ ] Rotas
+    * [x] Componentes
+    * [x] Hooks
+    * [x] Rotas
     * [ ] Context
-
 
 ## 🛠️ Tecnologias 
 
@@ -59,7 +58,7 @@ $  npm run dev
 
 
 
-made with 💜 by GUILHERME FONSECA 👋 [See my linkedIn]
+made with 💜 by GUILHERME FONSECA 👋 [See my linkedIn]()
 
 ## Contribuição
 

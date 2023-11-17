@@ -16,3 +16,8 @@
     flex-shrink: 0;
 }
 
+#main .repositories .list {
+    list-style: none;
+    margin: 1rem;
+    padding: 0;
+}

@@ -19,6 +19,6 @@ connectDatabase()
     .then(() => { console.log('Conectado ao banco de dados') })
     .catch((error) => console.log(`Houve um erro ${error}`))
 
-
+ 
 // server
 app.listen(3333, console.log("Servidor online"))

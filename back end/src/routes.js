@@ -10,7 +10,7 @@ const CreateSession = require('./controllers/SessionController');
 routes.post('/sessions', CreateSession)
 routes.post('/users', CreateUser)
 
-routes.use(auth)
+// routes.use(auth)
 
 // private routes
 routes.get('/users', UsersControllers)
@@ -20,7 +20,7 @@ routes.delete('/users/:id', Destroy)
 
 routes.get('/users/:user_id/repositories', RepositoriesController)
 routes.post('/users/:user_id/repositories', CreateRepository)
-routes.delete('/users/:user_id/repositories', DestroyRepository)
+routes.delete('/users/:user_id/repositories/:id', DestroyRepository)
 
 
 module.exports = routes
