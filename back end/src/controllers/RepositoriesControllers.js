@@ -3,6 +3,7 @@ const Repository = require("../models/Repository");
 
 async function RepositoriesController(request, response) {
   const { user_id } = request.params;
+  const q = request.query;
 
   try {
     const user = await User.findById(user_id);
@@ -11,9 +12,16 @@ async function RepositoriesController(request, response) {
       return response.status(404).json();
     }
 
+    // let query = {};
+
+    // if(q) {
+    //   query = { url: {$regex: q} }
+    // }
+
     const repositories = await Repository.find({
       userId: user_id,
-    });
+      // ...query
+    }); 
 
     console.log(repositories)
 
@@ -60,7 +68,7 @@ async function CreateRepository(request, response) {
 async function DestroyRepository(request, response) {
   const { user_id, id } = request.params;
 
-  try {
+  try { 
     const user = await User.findById(user_id);
 
     if (!user) {
@@ -69,7 +77,7 @@ async function DestroyRepository(request, response) {
 
     const repository = await Repository.findOneAndDelete({
       userId: user_id,
-      id,
+      id, 
     });
     
     if (!repository) {

@@ -22,7 +22,7 @@
     * [x] Componentes
     * [x] Hooks
     * [x] Rotas
-    * [ ] Context
+    * [x] Context
 
 ## 🛠️ Tecnologias 
 
@@ -56,9 +56,12 @@ $  npm run dev
 
 ```
 
+<a href="">Clique aqui para testar aplicacao</a>
+
+![2023-11-17-11-59-40](https://github.com/Guilhermefonseca2021/Desafio_Full-Stack/assets/92196697/1b3876f2-1095-4552-af3e-7fe9ddb82f4b)
 
 
-made with 💜 by GUILHERME FONSECA 👋 [See my linkedIn]()
+made with 💜 by GUILHERME FONSECA 👋 [See my linkedIn]("www.linkedin.com/in/guilherme-fonseca-dos-santos-a49594207")
 
 ## Contribuição
 

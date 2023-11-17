@@ -13,14 +13,15 @@ export default function Homepage() {
 
   function handleSearch(event) {
     event.preventDefault();
-    console.log(search)
+    console.log(search);
   }
-  
-  useEffect(() => {
-    axios(`http://localhost:3333/users/${userId}/repositories`)
-    .then(response => setRepos(response.data))
-  }, [])
 
+  useEffect(() => {
+    axios(`http://localhost:3333/users/${userId}/repositories`).then(
+      (response) => setRepos(response.data)
+    );
+  }, []);
+  
   return (
     <div id="main">
       <Header />
@@ -39,18 +40,12 @@ export default function Homepage() {
 
       <div className="repositories">
         <CreateRepo />
-        {repos.map(repo => {
-          return(
-            <Repository 
-              key={repo.id} 
-              name={repo.name}
-              url={repo.url}
-            />
-          )
-        })
-        }
+        <ul className="list">
+          {repos.map((repo) => {
+            return <Repository key={repo.id} id={repo.id} name={repo.name} url={repo.url} />;
+          })}
+        </ul>
       </div>
     </div>
   );
 }
-

@@ -1,21 +1,24 @@
 import "./styles.css";
+import axios from "axios";
 
-export default function Repository({name, url}) {
-  function handleDeleteRepo(repo) {
-    console.log(repo)
+export const userId = "6532ec44d633ce07376c9368";
+
+const apiUrl = `http://localhost:3333/users/${userId}/repositories`;
+
+export default function Repository({ name, url }) {
+  function handleDeleteRepo() {
+    const url = (`${apiUrl}/${name}`);
+    axios.delete(url);
+    console.log(url)
   }
 
   return (
-    <>
-      <ul className="list">
-        <li className="item">
-          <div className="info">
-            <div className="owner">{name}</div>
-            <div className="name">{url}</div>
-          </div>
-          <button onClick={handleDeleteRepo}>Apagar</button>
-        </li>
-      </ul>
-    </>
+    <li className="item">
+      <div className="info">
+        <div className="owner">{name}</div>
+        <div className="name">{url}</div>
+      </div>
+      <button onClick={handleDeleteRepo}>Apagar</button>
+    </li>
   );
 }

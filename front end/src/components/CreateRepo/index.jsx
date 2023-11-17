@@ -1,32 +1,27 @@
 import { useState } from "react";
 import "./styles.css";
 import axios from "axios";
-import { userId } from "../../pages/Homepage";
+
+export const userId = "6532ec44d633ce07376c9368";
+
+const apiUrl = `http://localhost:3333/users/${userId}/repositories`;
 
 export default function CreateRepo() {
   const [newRepo, setNewRepo] = useState("");
 
+  function extractRepoName(githubUrl) {
+      const regex = /^(?:https?:\/\/)?(?:www\.)?github\.com\/(?:[a-zA-Z0-9-]+\/)?([a-zA-Z0-9_.-]+)(?:\.git)?$/;
+      const match = githubUrl.match(regex);
+  
+      const repositoryName = match[1];
+      return repositoryName
+  }
+  
   async function handleCreateNewRepo() {
-    const apiUrl = `http://localhost:3333/users/${userId}/repositories`;
-
-    function repositoryName(apiUrl) {
-      const regex =
-        /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)/;
-      // mall our string and return some part
-      const match = apiUrl.match(regex);
-
-      console.log("match", match);
-      
-      if (match[2]) {
-        const values = match[2].split("/");
-
-        console.log("values", values);
-        return `${values[1]}/${values[2]}`;
-      }
-    }
+    const formatName = await extractRepoName(newRepo);
 
     const postData = {
-      name: newRepo,
+      name: formatName,
       url: newRepo,
     };
 
@@ -41,6 +36,7 @@ export default function CreateRepo() {
       <input
         type="url"
         name="new-repo"
+        required
         id="new-repo"
         placeholder="type a link here..."
         onChange={(e) => setNewRepo(e.target.value)}
